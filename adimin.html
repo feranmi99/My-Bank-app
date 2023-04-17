@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+            tr {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center my-4 fw-bold">Welcome To The History</h1>
+        <table  class="table">
+            <tr>
+                <td class="5">S/N</td>
+                <td class="5">First Name</td>
+                <td class="5">Last Name</td>
+                <td class="5">Account number</td>
+                <td class="5">E-mail</td>
+                <td class="5">BVN</td>
+                <td class="5">Sender</td>
+            </tr>
+            <tbody id="display">
+
+            </tbody>
+        </table>
+        <script>
+            let localStorageData = JSON.parse(localStorage.getItem("Mybank")) 
+                console.log(localStorageData);
+                document.getElementById("display").innerHTML +=
+                
+                localStorageData.map((value, index) => (
+                    `
+                    <tr>
+                        <td>${index + 1}.</td>
+                        <td>${value.Firstname }</td>
+                        <td>${value.Lastname}</td>
+                        <td>${value.accountnumber}</td>
+                        <td>${value.email}</td>
+                        <td>${value.bvn}</td>
+                        <td>${value.phonenumber}</td>
+                        
+                        </tr>
+                        ` 
+                        // <td class="fs-5">${value.Firstname}</td>
+                ))
+        </script>
+    </body>
+</html>

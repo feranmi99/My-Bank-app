@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+            tr {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class=" sticky-bottom bg-body-tertiary" >
+            <div class="d-flex justify-content-between ">
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-solid fa-building-columns "></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="./index.html">Home</a>
+    
+                </div>
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-regular fa-credit-card"></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="#">Finance</a>
+                </div>
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-solid fa-user"></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="/user.html">Me</a>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center my-4 fw-bold">My Information</h1>
+        <div class="mx-1">
+            <!-- <td class="5">S/N</td> -->
+            <div class="fs-5">First Name : <span id="firstname"></span> </div>
+            <div class="fs-5">Last Name : <span id="Lastname"></span> </div>
+            <div class="fs-5">Account number : <span id="accountnumber"></span> </div>
+            <div class="fs-5">E-mail : <span id="email"></span> </div>
+            <div class="fs-5">BVN : <span id="bvn"></span> </div>
+            <div class="fs-5">phone Number : <span id="phonenumber"></span> </div>
+        </div>
+        <div class="m-4">
+            <button class="btn btn-danger" onclick="Dismiss()">Delete Account</button>
+        </div>
+
+
+        <script>
+            let alluser = JSON.parse(localStorage.getItem("Mybank"))
+            let localData = JSON.parse(localStorage.getItem("key"))
+            found =  alluser.find((value, index) =>(value.accountnumber === localData))
+            console.log(found);
+            if(found){ 
+
+                firstname.innerHTML = found.Firstname
+                Lastname.innerHTML = found.Lastname
+                accountnumber.innerHTML = found.accountnumber
+                email.innerHTML = found.email
+                bvn.innerHTML = found.bvn
+                phonenumber.innerHTML = found.phonenumber
+            }
+            const Dismiss = () =>{
+                alert("Are You Sure About Doing This")
+            }
+        </script>
+    </body>
+</html>

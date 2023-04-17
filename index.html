@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body onload="getUsers()">
+    <div class="">
+        <marquee behavior="" direction="" class="fs-2 fw-bold text-warning">Noval Bank <span class="text" ></span></marquee>
+        <div id="users" class="container fs-2"></div>
+        <div class=" container" style="border: 4px solid gold; border-radius: 10px;">
+            <p class="fs-3">Your Balance :<span id="total"></span></p>
+            <div class="text fs-5 fw-bold" id="info"></div>
+            <div class="d-flex justify-content-between">
+                
+                <div class=" text-center  col">
+                    <button class="btn btn-warning fw-bold" onclick="Deposit()">
+                        <i class="fa-solid fa-money-bill-transfer fs-3"></i> <br>
+                        Deposit
+                    </button>
+                </div>
+                <div class=" text-center  col">
+                    <button class="btn btn-warning fw-bold" onclick="Transfer()">
+                        <i class="fa-solid fa-money-bill-transfer fs-3"></i> <br>
+                         Tranfer
+                    </button>
+                    
+                </div>
+                <div class=" text-center  col">
+                    <button class="btn btn-warning fw-bold" onclick="Withdraw()">
+                        <i class="fa-solid fa-money-bill-transfer fs-3"></i> <br>   
+                         Withdraw
+                    </button>
+                    
+                </div>
+    
+            </div>
+            <div  class="m-2">
+                <button class="btn btn-warning " onclick="Transaction()">Transaction History</button>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="card my-3 mx-3 bg-info">
+        <div class="row">
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1605874160/contentservice/hp.png_BJTuxM4r9w.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1605874103/contentservice/itec.png_ry0n-NSqP.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1624436320/contentservice/Intel.png_BySv0vehO.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1677226673/contentservice/dgf.jpg_S1_nGl8Ao.jpg" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1654253801/contentservice/tecs.png_HyZeKPw_c.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1605874108/contentservice/uni.png_S10ET-Vrcv.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1656326346/contentservice/philip.png_Bya6_WD9c.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1605874087/contentservice/coke.png_H1khbVHcv.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1674721128/contentservice/Huawei.jpg_ByJ_v2y3j.jpg" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1621431873/contentservice/lenovo%20logo.png_rJIrIcMtO.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1643360594/contentservice/brands.png_H1d8ZNbAK.png" alt="" class="col-lg-2 col-3 card" >
+            <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1660565787/contentservice/vivo%20logo.png_HkMXthw05.png" alt="" class="col-lg-2 col-3 card" >
+        </div>
+    </div>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, necessitatibus aperiam enim a tempora ad mollitia sit hic non reiciendis. Aliquid tempora enim voluptates id minus sed porro molestiae dolore magnam, corrupti totam distinctio temporibus et architecto veritatis. Accusamus repellat neque nesciunt natus ducimus possimususcipit sint quae incidunt eum, ratione placeat! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore maxime eos laborum nulla quis sit tempore vitae perspiciatis necessitatibus sequi, illo ea provident! Iste ut ab, cumque eligendi officia odit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum beatae est modi error, aperiam dolorem? Aperiam sit maxime, harum reiciendis tenetur eum ratione? Illo, reprehenderit adipisci voluptatum iure repellendus veritatis?
+
+    </P>
+    <nav class=" sticky-bottom bg-body-tertiary" >
+        <div class="d-flex justify-content-between ">
+            <div class="col border text-center rounded-4 bg-warning">
+                <i class="fa-solid fa-building-columns "></i> <br>
+                <a class="navbar-brand fw-bold fs-5 " href="./index.html">Home</a>
+
+            </div>
+            <div class="col border text-center rounded-4 bg-warning">
+                <i class="fa-regular fa-credit-card"></i> <br>
+                <a class="navbar-brand fw-bold fs-5 " href="#">Finance</a>
+            </div>
+            <div class="col border text-center rounded-4 bg-warning">
+                <i class="fa-solid fa-user"></i> <br>
+                <a class="navbar-brand fw-bold fs-5 " href="/user.html">Me</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        let balance = 10000;
+        let localData = JSON.parse(localStorage.getItem("key"))
+        let alluser = JSON.parse(localStorage.getItem("Mybank"))
+
+        if(localData){console.log(localData);}
+        if(alluser){console.log(alluser);}
+        
+        if(!localStorage.balance){
+            localStorage.setItem("balance", JSON.stringify(balance));
+        }
+        total.innerHTML = JSON.parse(localStorage.getItem("balance"));
+        const getUsers = () =>{
+           found =  alluser.find((value, index) =>(value.accountnumber === localData))
+           if(found){
+            users.innerHTML = `
+                <span class="text" id="users"><i class="fa-regular fa-user fw-bold fs-4"></i> ${found.Firstname}</span>
+                <span class="text" id="users"> ${found.Lastname}</span>
+                `
+            info.innerHTML = `
+                <span class="text">Account No: ${found.accountnumber}</span>
+                `
+            console.log(found);
+           }
+        }
+        const Deposit = () => {
+            window.location.href ="Deposit.html"
+        }
+        const Transfer = () => {
+            window.location.href ="Trasnfer.html"
+        }
+        const Withdraw = () => {
+            window.location.href ="Withdraw.html"
+        }
+        const Transaction = () => {
+            window.location.href ="History.html"
+        }
+    </script>
+    
+    
+</body>
+</html>

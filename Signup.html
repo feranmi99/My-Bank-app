@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>signup</title>
+        <link rel="stylesheet" href="./Login.css">
+    </head>
+    <body>
+        <div class="form">
+            <p class="title">Sign-up </p>
+           
+            <label>
+                <input placeholder="Email" type="email" class="input" id="email">
+                
+            </label> 
+                
+            <label>
+                <input  placeholder="Password"  class="input" id="password">
+                
+            </label>
+            <!-- <label>
+                <input required="" placeholder="Confirm password" type="password" class="input">
+                <select name="" id="">
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                    <option value="">Other</option>
+                </select>
+                
+            </label> -->
+            <button class="submit" onclick="signin()">Submit</button>
+            <p class="signin">Create A New Acount ? 
+                <a href="./Login.html">Create An Acount</a> 
+            </p>
+        </div>
+
+        <script>
+            let alluser = JSON.parse(localStorage.getItem("Mybank"))
+            console.log(alluser);
+            let userfound = false
+            const signin = () => {
+                let found = alluser.find((each, index) => (each.email === email.value && each.password === password.value));
+                if(found){
+                    console.log(found.accountnumber);
+                    let key = found.accountnumber;
+                    localStorage.setItem("key", JSON.stringify(key));
+                    window.location.href = "index.html"
+
+                }else{
+                    alert("account does not exist.")
+                }
+                // for (let index = 0; index < alluser.length; index++) {
+                //     console.log(index);
+                //     if (email.value==alluser[index].email && password.value==alluser[index].password) {
+                //         console.log(index);
+                //         localStorage.setItem("userindex",index)
+                //         userfound = true
+                //         break;
+                //     }
+                //     // console.log(mail.value,pass.value);
+                    
+                // }
+                // if (userfound==true) {
+                    //     // alert("Welcome User Found ooo")
+                    //     window.location.href = "index.html"
+                // } else {
+                //     alert("User not Found Try Again")
+                    
+                // }
+            }
+        </script>
+    </body>
+</html>
