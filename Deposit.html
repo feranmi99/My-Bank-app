@@ -26,7 +26,10 @@
                 
                 <select name="" id="">
                     <option value="">opay</option>
-                    <option value="">Accecsse</option>
+                    <option value="">Accesse bank</option>
+                    <option value="">Wema bank</option>
+                    <option value="">Palmpay</option>
+                    <option value="">Kuda</option>
                     <option value="">GT-bank</option>
                 </select>
             </div>
@@ -34,11 +37,11 @@
         <div class="mx-2 my-4">
             <label for="" class="fw-bold">Amount</label>
             <input type="number" class="form-control my-3" placeholder="# 100.00-5,000,000.00" id="Amount">
-            <button class="btn btn-info w-100 fw-bold fs-3" onclick="pay()">pay</button>
+            <button class="btn btn-warning w-100 fw-bold fs-3" onclick="pay()">pay</button>
         </div>
-        <div class="fs-3 fw-bold" id="info"></div>
+        <div class="fs-4 fw-bold" id="info"></div>
         <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum corrupti error molestiae ratione, cuiatis asperiores dolorem quod labore quibusdam, commodi maxime ipsum excepturi obcaecati deleniti impedit. Non veniam amet maxime eaque quidem accusamus sit, error voluptatem, perspiciatis autem inventore. Voluptatum quis perferendis voluptatem, tenetur, laudantium iusto vitae atque veniam nemo porro culpa itaque velit, magni iste quas. Dolores vel ipsam voluptatum. Veritatis tenetur dicta sint commodi ut magni officia ipsum? Qui magni animi distinctio debitis tenetur laborum veritatis, officiis facilis aspernatur vitae quis quae! Quae id obcaecati corporis?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum corrupti error molestiae ratione, cuiatis asperiores dolorem quod labore quibusdam, commodi maxime ipsum excepturi obcaecati deleniti impedit. Non veniit, error voluptatem, perspiciatis autem inventore. Voluptatum quis perferendis voluptatem, tenetur, laudantium iusto vitae atque veniam nemo porro culpa itaque velit, magni iste quas. Dolores vel ipsam voluptatum. Veritatis tenetur dicta sint commodi ut magni officia ipsum? Qui magni animi distinctio debitis tenetur laborum veritatis, officiis facilis aspernatur vitae quis quae! Quae id obcaecati corporis?
         </div>
 
         <nav class=" sticky-bottom bg-body-tertiary" >
@@ -82,14 +85,7 @@
             amount = Number(amount)
             let capital = storageData + amount
             localStorage.setItem('balance', JSON.stringify(capital));
-            // let user = {
-            //     accountnumber: accountnumber,
-            //     accountnumber: accountnumber,
-            //     Amount: Amount,
             
-            // } 
-            // alluser.push(user)
-            // console.log(alluser);
         }
         
         

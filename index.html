@@ -65,7 +65,7 @@
                 let bvn = document.getElementById("bvn").value
                 let email = document.getElementById("email").value
                 let password = document.getElementById("password").value
-                let randompercentage = Math.round("911" + Math.random()* 10000000)
+                let randompercentage = Math.round("91" + Math.random()* 100000000)
 
                 let user = {
                     Firstname: Firstname,
@@ -81,7 +81,7 @@
                 alluser.push(user),
                 // console.log(alluser);
                 localStorage.setItem("Mybank",JSON.stringify(alluser) )
-                window.location.href = "signup.html"
+                window.location.href = "dashborad.html"
                 console.log(alluser);
 
                 Firstname.value = ""
@@ -91,36 +91,6 @@
                 email.value = ""
                 password.value = ""
             }
-            // const createne = ()=> {
-                // let display = document.getElementById("display");
-                // let Firstname = document.getElementById("Firstname").value;
-                // let Lastname = document.getElementById("Lastname").value
-                // let phonenumber = document.getElementById("phonenumber").value
-                // let bvn = document.getElementById("bvn").value
-                // let email = document.getElementById("email").value
-                // let password = document.getElementById("password").value
-
-                // let user = {
-                //     Firstname: Firstname,
-                //     Lastname: Lastname,
-                //     phonenumber: phonenumber,
-                //     bvn: bvn,
-                //     email: email,
-                //     password: password,
-                // } 
-                // alluser.push(user),
-                // console.log(alluser);
-                // localStorage.setItem("Mybank",JSON.stringify(alluser) )
-                // window.location.href = "signup.html"
-                // console.log(alluser);
-
-                // Firstname.value = ""
-                // Lastname.value = ""
-                // phonenumber.value = ""
-                // bvn.value = ""
-                // email.value = ""
-                // password.value = ""
-            // }
         </script>
     </body>
 </html>

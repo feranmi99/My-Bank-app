@@ -20,16 +20,18 @@
 </head>
 <body>
     <div class="text-center fs-4 fw-bold card sticky-top text-dark">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
         Transfer
     </div>
     <div class="m-4">
         <div class="my-2">
             <label for="" class="fw-bold">Bank</label>
-            <select name="" id=""  class=" p-1 card form-control">
-                <option value="disable">Select Bank</option>
+            <select name="" id="">
                 <option value="">opay</option>
-                <option value="">Accecsse</option>
+                <option value="">Accesse bank</option>
+                <option value="">Wema bank</option>
+                <option value="">Palmpay</option>
+                <option value="">Kuda</option>
                 <option value="">GT-bank</option>
             </select>
         </div>
@@ -72,21 +74,22 @@
     </nav>
     <script>
         let storageData = JSON.parse(localStorage.getItem('balance'))
-        let alluser = []
+        // let alluser = []
         const pay = () => {
-            let selectbank = document.getElementById("selectbank").value;
-            let accountnumber = document.getElementById("accountnumber").value
+            // let selectbank = document.getElementById("selectbank").value;
+            // let accountnumber = document.getElementById("accountnumber").value
             let amount = document.getElementById("Amount").value
             let capital = storageData - amount
             localStorage.setItem('balance', JSON.stringify(capital));
-            let user = {
-                accountnumber: accountnumber,
-                accountnumber: accountnumber,
-                Amount: Amount,
+            console.log(localStorage);
+            // let user = {
+            //     accountnumber: accountnumber,
+            //     accountnumber: accountnumber,
+            //     Amount: Amount,
             
-            } 
-            alluser.push(user)
-            console.log(alluser);
+            // } 
+            // alluser.push(user)
+            // console.log(alluser);
         }
         
         
