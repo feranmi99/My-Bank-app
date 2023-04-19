@@ -51,7 +51,7 @@
             <button class="submit" onclick="createne()">Submit</button>
             <p class="signin">Already have an acount ? 
             <a href="./Signup.html">Signin</a> </p>
-            </div>
+        </div>
         <script>
             let alluser = []
             if (localStorage.Mybank) {
@@ -78,18 +78,24 @@
 
 
                 } 
-                alluser.push(user),
-                // console.log(alluser);
-                localStorage.setItem("Mybank",JSON.stringify(alluser) )
-                window.location.href = "Signup.html"
-                console.log(alluser);
+                if (Firstname == "" && Lastname == "" && phonenumber == "" && bvn == "" && email =="" && password == "") {
+                    alert("Please Enter Your Infomation")
+                    window.location.href = "index.html"
+                } else {
+                    alluser.push(user),
+                    console.log(alluser);
+                    localStorage.setItem("Mybank",JSON.stringify(alluser) )
+                    window.location.href = "Signup.html"
+                    console.log(alluser);
+    
+                    Firstname.value = ""
+                    Lastname.value = ""
+                    phonenumber.value = ""
+                    bvn.value = ""
+                    email.value = ""
+                    password.value = ""
 
-                Firstname.value = ""
-                Lastname.value = ""
-                phonenumber.value = ""
-                bvn.value = ""
-                email.value = ""
-                password.value = ""
+                }
             }
         </script>
     </body>

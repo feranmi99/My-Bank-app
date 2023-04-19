@@ -16,6 +16,30 @@
     </style>
 </head>
 <body>
+    <nav class=" sticky-bottom " >
+        <div class="d-flex justify-content-between ">
+            <a href="./dashborad.html">
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-solid fa-building-columns  fw-bold fs-1"></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="./dashborad.html">Home</a>
+        
+                </div>
+
+            </a>
+            <a href="">
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-regular fa-credit-card fw-bold fs-1"></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="./card.html">card</a>
+                </div>
+            </a>
+            <a href="">
+                <div class="col border text-center rounded-4 bg-warning">
+                    <i class="fa-solid fa-user fw-bold fs-1"></i> <br>
+                    <a class="navbar-brand fw-bold fs-5 " href="/user.html">Me</a>
+                </div>
+            </a>
+        </div>
+    </nav>
     <div>
         <div class="text-center fs-4 fw-bold card sticky-top text-dark ">
             Add Money
@@ -40,27 +64,6 @@
             <button class="btn btn-warning w-100 fw-bold fs-3" onclick="pay()">pay</button>
         </div>
         <div class="fs-4 fw-bold" id="info"></div>
-        <div>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum corrupti error molestiae ratione, cuiatis asperiores dolorem quod labore quibusdam, commodi maxime ipsum excepturi obcaecati deleniti impedit. Non veniit, error voluptatem, perspiciatis autem inventore. Voluptatum quis perferendis voluptatem, tenetur, laudantium iusto vitae atque veniam nemo porro culpa itaque velit, magni iste quas. Dolores vel ipsam voluptatum. Veritatis tenetur dicta sint commodi ut magni officia ipsum? Qui magni animi distinctio debitis tenetur laborum veritatis, officiis facilis aspernatur vitae quis quae! Quae id obcaecati corporis?
-        </div>
-
-        <nav class=" sticky-bottom bg-body-tertiary" >
-            <div class="d-flex justify-content-between ">
-                <div class="col border text-center rounded-4 bg-warning">
-                    <i class="fa-solid fa-building-columns "></i> <br>
-                    <a class="navbar-brand fw-bold fs-5 " href="./dashborad.html">Home</a>
-    
-                </div>
-                <div class="col border text-center rounded-4 bg-warning">
-                    <i class="fa-regular fa-credit-card"></i> <br>
-                    <a class="navbar-brand fw-bold fs-5 " href="#">Finance</a>
-                </div>
-                <div class="col border text-center rounded-4 bg-warning">
-                    <i class="fa-solid fa-user"></i> <br>
-                    <a class="navbar-brand fw-bold fs-5 " href="/user.html">Me</a>
-                </div>
-            </div>
-        </nav>
     </div>
     <script>
         let localData = JSON.parse(localStorage.getItem("key"))
