@@ -50,22 +50,22 @@
     <div class="m-4">
         <div class="my-2">
             <label for="" class="fw-bold">Bank</label>
-            <select name="" id="">
-                <option value="">opay</option>
-                <option value="">Accesse bank</option>
-                <option value="">Wema bank</option>
-                <option value="">Palmpay</option>
-                <option value="">Kuda</option>
-                <option value="">GT-bank</option>
+            <select name="name" id="selet">
+                <option value="opay">Opay</option>
+                <option value="Accesse bank">Accesse bank</option>
+                <option value="Wema bank">Wema bank</option>
+                <option value="Palmpay">Palmpay</option>
+                <option value="Kuda">Kuda</option>
+                <option value="GT-bank">GT-bank</option>
             </select>
         </div>
         <div class="my-2">
             <label for="" class="fw-bold">Account Number</label>
-            <input type="text" class="form-control" placeholder="10 digit" id="accountnumber">
+            <input type="number" class="form-control" placeholder="10 digit" id="accountnumber">
         </div>
         <div class="my-2">
             <label for="" class="fw-bold">Amount</label>
-            <input type="text" class="form-control" placeholder="# 100.00-5,000,000.00" id="Amount">
+            <input type="number" class="form-control" placeholder="# 100.00-5,000,000.00" id="Amount">
         </div>
         <div class="my-2">
             <label for="" class="fw-bold">Remark</label>
@@ -76,21 +76,68 @@
 
         </div>
     </div>
-    
+    <div id="sucsse" class="text-center text-success fs-1 fw-bold"></div>
+    <div id="err" class="text-center text-danger fs-4 fw-bold"></div>
+    <div id="dis" class="text-center text-danger fs-4 fw-bold"></div>
     <script>
-        let storageData = JSON.parse(localStorage.getItem('balance'))
-        // let alluser = []
-        const pay = () => {
-            // let selectbank = document.getElementById("selectbank").value;
-            // let accountnumber = document.getElementById("accountnumber").value
-            let amount = document.getElementById("Amount").value
-            let capital = storageData - amount
-            localStorage.setItem('balance', JSON.stringify(capital));
-            console.log(localStorage);
-            window.location.href = "dashborad.html"
+        let now = new Date();
+        currentTime = now.toLocaleTimeString()
+        console.log(currentTime);
+
+        let alluser = []
+        if (localStorage.myhistory) {
+            alluser = JSON.parse(localStorage.getItem("myhistory")) 
+            
         }
+        let storageData = JSON.parse(localStorage.getItem('balance'));
+        let localhistory = JSON.parse(localStorage.getItem('myhistory'));
+        let word = "Tranfer"
+        const pay = () => {
+            if (accountnumber.value == "" || Amount.value == "" || selet.value == "") {
+                dis.innerHTML = "Please Enter Aprropate Information"
+            } else if (Amount.value > storageData) {
+                err.innerHTML = "Your Account Balance Is Not Up To Your Input"
+                
+            } else if (storageData <= 0) {
+                // capital = 0
+                err.innerHTML = "Your Account Balance Is Low To Make This Transaction"
+            } else {
+                amount = Number(Amount)
+                let capital = storageData - Amount.value;
+
+                localStorage.setItem('balance', JSON.stringify(capital));
+                let user = {
+                    word:word,
+                    accountnumber: accountnumber.value,
+                    Amount: Amount.value,
+                    selet: selet.value,
+                    currentTime: currentTime,
+                }
+                alluser.push(user),
+                console.log(alluser);
+                dis.innerHTML = ""
+                transaction = false
+                if (accountnumber == "" && Amount == "" && selet == "") {
+                    err.innerHTML = "Error"
+                } else  {
+                    sucsse.innerHTML = `<img src="./green-checkmark.png" alt=""> Transation Sucsseful` 
+                    
+                    localStorage.setItem("myhistory",JSON.stringify(alluser) )
+                    // sucsse.innerHTML = ""
+                } 
+                accountnumber.value = ""
+                Amount.value = ""
+                selet.value = ""
+
+                setTimeout(() => {
+                    window.location.href = "dashborad.html"
+                }, 3000);
+                
+            }
         
-        
+            
+           
+        }
     </script>
 </body>
 </html>

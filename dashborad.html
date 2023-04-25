@@ -101,7 +101,9 @@
             localStorage.setItem("balance", JSON.stringify(balance));
         }
         total.innerHTML = JSON.parse(localStorage.getItem("balance"));
-
+        // if (localStorage.balance == 0) {
+        //     alert("asdfjklwertuo")
+        // }
         const getUsers = () =>{
             let found =  alluser.find((value, index) =>(value.accountnumber === localData))
             console.log(found);
@@ -110,7 +112,7 @@
             users.innerHTML = `
                 <span class="text" id="users"><i class="fa-regular fa-user fw-bold fs-4"></i> ${found.Firstname}</span>
                 <span class="text" id="users"> ${found.Lastname}</span>
-                `
+            `
             info.innerHTML = `
                 <span class="text">Account No: ${found.accountnumber}</span>
                 `
@@ -126,7 +128,7 @@
             window.location.href ="Withdraw.html"
         }
         const Transaction = () => {
-            window.location.href ="History.html"
+            window.location.href ="adimin.html"
         }
     </script>
     

@@ -20,20 +20,20 @@
         <h1 class="text-center my-4 fw-bold">Welcome To The History</h1>
         <table  class="table">
             <tr>
-                <td class="5">S/N</td>
-                <td class="5">First Name</td>
-                <td class="5">Last Name</td>
-                <td class="5">Account number</td>
-                <td class="5">E-mail</td>
-                <td class="5">BVN</td>
-                <td class="5">Sender</td>
+                <td class="">S/N</td>
+                <td class="">Account number</td>
+                <td class="">Tranfer/Deposit</td>
+                <td class="">Amount</td>
+                <td class="">Bank</td>
+                <td class="">Time</td>
             </tr>
             <tbody id="display">
 
             </tbody>
         </table>
         <script>
-            let localStorageData = JSON.parse(localStorage.getItem("Mybank")) 
+            let localStorageData = JSON.parse(localStorage.getItem("myhistory")) 
+            console.log(localStorageData);
                 console.log(localStorageData);
                 document.getElementById("display").innerHTML +=
                 
@@ -41,16 +41,14 @@
                     `
                     <tr>
                         <td>${index + 1}.</td>
-                        <td>${value.Firstname }</td>
-                        <td>${value.Lastname}</td>
                         <td>${value.accountnumber}</td>
-                        <td>${value.email}</td>
-                        <td>${value.bvn}</td>
-                        <td>${value.phonenumber}</td>
+                        <td>${value.word}</td>
+                        <td>$ ${value.Amount}</td>
+                        <td>${value.selet}</td>
+                        <td>${value.currentTime}</td>
                         
                         </tr>
                         ` 
-                        // <td class="fs-5">${value.Firstname}</td>
                 ))
         </script>
     </body>
