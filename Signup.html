@@ -47,13 +47,13 @@
                     console.log(found.accountnumber);
                     let key = found.accountnumber;
                     localStorage.setItem("key", JSON.stringify(key));
-                    show.innerHTML = ` <img src="./green-checkmark.png" alt=""> Login Sucssefully`
+                    show.innerHTML = ` ✔ Login Sucssefully`
                     setTimeout(() => {
                         window.location.href = "dashborad.html"
                     }, 3000);
 
                 }else{
-                    dis.innerHTML = "account does not exist."
+                    dis.innerHTML = " account does not exist."
                 }
                 // for (let index = 0; index < alluser.length; index++) {
                 //     console.log(index);

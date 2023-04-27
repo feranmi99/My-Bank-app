@@ -118,9 +118,9 @@
                 dis.innerHTML = ""
                 transaction = false
                 if (accountnumber == "" && Amount == "" && selet == "") {
-                    err.innerHTML = "Error"
+                    err.innerHTML = " Error"
                 } else  {
-                    sucsse.innerHTML = `<img src="./green-checkmark.png" alt=""> Transation Sucsseful` 
+                    sucsse.innerHTML = `✔ Transation Sucsseful` 
                     
                     localStorage.setItem("myhistory",JSON.stringify(alluser) )
                     // sucsse.innerHTML = ""
